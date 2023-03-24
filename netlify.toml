@@ -1,0 +1,4 @@
+[[redirects]]
+  from = /share/*
+  to = /.netlify/builders/sharepage.js
+  status = 200

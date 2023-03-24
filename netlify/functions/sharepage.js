@@ -1,6 +1,8 @@
 const { builder } = require("@netlify/functions");
 
 async function handler(event, context) {
+	const htmlResponse = "<h1>Does this even work?</h1>";
+
 	return {
 		statusCode: 200,
 		headers: {
@@ -10,7 +12,8 @@ async function handler(event, context) {
     <!DOCTYPE html>
     <html>
 		<Layout title="Contenda Sharing!">
-			Does this even work?
+			${htmlResponse}
+			Let's find out!
 		</Layout>
     </html>
     `
