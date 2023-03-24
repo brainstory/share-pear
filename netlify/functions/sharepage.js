@@ -4,7 +4,7 @@ async function handler(event, context) {
 	return {
 		statusCode: 200,
 		headers: {
-			"Content-Type": "text/html",
+			"Content-Type": "text/html"
 		},
 		body: `
     <!DOCTYPE html>
@@ -13,7 +13,7 @@ async function handler(event, context) {
 			Does this even work?
 		</Layout>
     </html>
-    `,
+    `
 	};
 }
 
