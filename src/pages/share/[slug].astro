@@ -1,7 +1,7 @@
 ---
 // import { Markdown } from "astro-remote";
 import Layout from "../../layouts/Layout.astro";
-// const markdown = Astro.request.headers.get("markdown");
+const markdown = Astro.request.headers.get("markdown");
 
 async function getDate() {
 	return new Date().toLocaleString();
@@ -21,9 +21,15 @@ const date = await getDate();
 		</p>
 
 		<p>
-			Received request body:
+			Does the markdown exist?
+
+			{markdown}
+		</p>
+
+		<p>
+			Received request body, if we even CARE:
 			<code>
-				{JSON.stringify(Astro.request.body)}
+				{JSON.stringify(Astro.request)}
 			</code>
 		</p>
 
