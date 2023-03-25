@@ -1,5 +1,5 @@
 ---
-// import { Markdown } from "astro-remote";
+import { Markdown } from "astro-remote";
 import Layout from "../../layouts/Layout.astro";
 const markdown = Astro.request.headers.get("markdown");
 
@@ -12,7 +12,7 @@ const date = await getDate();
 <html>
 	<Layout title="Contenda Blog Preview!">
 		<h1>My ODB post page, let's find out if it works</h1>
-		<!-- <Markdown content={markdown} /> -->
+
 		<p>
 			Received request headers:
 			<code>
@@ -20,18 +20,7 @@ const date = await getDate();
 			</code>
 		</p>
 
-		<p>
-			Does the markdown exist?
-
-			{markdown}
-		</p>
-
-		<p>
-			Received request body, if we even CARE:
-			<code>
-				{JSON.stringify(Astro.request)}
-			</code>
-		</p>
+		<Markdown content={markdown} />
 
 		<p>Page generated at: {date}</p>
 	</Layout>
