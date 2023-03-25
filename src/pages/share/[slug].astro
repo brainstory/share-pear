@@ -13,6 +13,8 @@ const date = await getDate();
 if (markdown === undefined || markdown === null) {
 	markdown = "No blog content found!";
 }
+
+let renderContent = `${markdown}`;
 ---
 
 <Layout title="Contenda Blog Preview!">
@@ -21,7 +23,7 @@ if (markdown === undefined || markdown === null) {
 
 		<div class="blog">
 			<Markdown
-				content={markdown}
+				content={renderContent}
 				sanitize={{
 					allowComments: true
 				}}
