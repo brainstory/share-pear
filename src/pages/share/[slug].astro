@@ -1,0 +1,18 @@
+---
+import { Markdown } from "astro-remote";
+import Layout from "../../layouts/Layout.astro";
+const markdown = Astro.request.headers.get("markdown");
+---
+
+<html>
+	<Layout title="Contenda Blog Preview!">
+		<h1>My ODB post page, let's find out if it works</h1>
+		<Markdown content={markdown} />
+		<p>
+			Received request headers:
+			<code>
+				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
+			</code>
+		</p>
+	</Layout>
+</html>
