@@ -19,7 +19,9 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 
 <Layout title="Contenda Blog Preview!">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Contenda</span></h1>
+		<h1 class="center">
+			<span class="text-gradient">Contenda</span> Blog Preview
+		</h1>
 
 		<div class="blog">
 			<Markdown
@@ -53,13 +55,14 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 			/>
 		</ul>
 
-		<p>Blog generated at: {date}</p>
+		<p class="small">Blog generated at: {date}</p>
 
-		<p>
+		<!-- If we ever need to debug this, here's the headers passed from the API -->
+		<!-- <p>
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
 			</code>
-		</p>
+		</p> -->
 	</main>
 </Layout>
