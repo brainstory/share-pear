@@ -14,7 +14,7 @@ if (markdown === undefined || markdown === null) {
 	markdown = "No blog content found!";
 }
 
-let renderContent = `${markdown}`;
+let renderContent = markdown.replace(/\\n/g, "\n");
 ---
 
 <Layout title="Contenda Blog Preview!">
