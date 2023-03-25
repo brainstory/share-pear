@@ -1,27 +1,42 @@
 ---
 import { Markdown } from "astro-remote";
 import Layout from "../../layouts/Layout.astro";
-const markdown = Astro.request.headers.get("markdown");
+
+let markdown = Astro.request.headers.get("markdown");
 
 async function getDate() {
 	return new Date().toLocaleString();
 }
 const date = await getDate();
+
+if (markdown === undefined || markdown === null) {
+	markdown = "No blog content found!";
+}
 ---
 
-<html>
-	<Layout title="Contenda Blog Preview!">
-		<h1>My ODB post page, let's find out if it works</h1>
+<Layout title="Contenda Blog Preview!">
+	<main>
+		<h1>Welcome to <span class="text-gradient">Contenda</span></h1>
 
-		<p>
+		<div class="blog">
+			<Markdown
+				content={markdown}
+				sanitize={{
+					dropAttributes: { style: ["*"] },
+					allowComments: true
+				}}
+			/>
+		</div>
+
+		<hr />
+
+		<p>Page generated at: {date}</p>
+
+		<p class="instructions">
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
 			</code>
 		</p>
-
-		<Markdown content={markdown} />
-
-		<p>Page generated at: {date}</p>
-	</Layout>
-</html>
+	</main>
+</Layout>
