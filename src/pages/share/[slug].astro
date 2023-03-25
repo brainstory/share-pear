@@ -20,6 +20,13 @@ const date = await getDate();
 			</code>
 		</p>
 
+		<p>
+			Received request body:
+			<code>
+				{JSON.stringify(Astro.request.body)}
+			</code>
+		</p>
+
 		<p>Page generated at: {date}</p>
 	</Layout>
 </html>
