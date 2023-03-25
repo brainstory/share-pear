@@ -3,10 +3,3 @@
   
   <h2 align="center">Share Pear: Share like a pear 🍐</h2>  
 </p>
-
-TODO:
-
--   [ ] Create ODB setup
--   [ ] Test ODBs
--   [ ] Make base page
--   [ ] Set up function for creating pages
