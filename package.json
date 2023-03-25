@@ -1,17 +1,18 @@
 {
-  "name": "share-pear",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/netlify": "^2.2.0",
-    "@netlify/functions": "^1.4.0",
-    "astro": "^2.1.5"
-  }
+	"name": "share-pear",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/netlify": "^2.2.0",
+		"@netlify/functions": "^1.4.0",
+		"astro": "^2.1.5",
+		"astro-remote": "^0.2.3"
+	}
 }
