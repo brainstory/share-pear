@@ -2,6 +2,11 @@
 // import { Markdown } from "astro-remote";
 import Layout from "../../layouts/Layout.astro";
 // const markdown = Astro.request.headers.get("markdown");
+
+async function getDate() {
+	return new Date().toLocaleString();
+}
+const date = await getDate();
 ---
 
 <html>
@@ -14,5 +19,7 @@ import Layout from "../../layouts/Layout.astro";
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
 			</code>
 		</p>
+
+		<p>Page generated at: {date}</p>
 	</Layout>
 </html>
