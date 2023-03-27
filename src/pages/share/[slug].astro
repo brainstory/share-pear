@@ -11,7 +11,8 @@ async function getDate() {
 const date = await getDate();
 
 if (markdown === undefined || markdown === null) {
-	markdown = "No blog content found!";
+	markdown =
+		"## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to build and share your content.";
 }
 
 let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
@@ -22,6 +23,12 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 		<h1 class="center">
 			<span class="text-gradient">Contenda</span> Blog Preview
 		</h1>
+
+		<p>
+			This is a <strong>public URL</strong> of this content, and will expire
+			within 30 days! If you want to keep this content, export it from the
+			Contenda app platform.
+		</p>
 
 		<div class="blog">
 			<Markdown
