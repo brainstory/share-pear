@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/sharepage/*"
-  to = "/.netlify/builders/sharepage"
-  status = 200
