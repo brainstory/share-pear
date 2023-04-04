@@ -21,3 +21,10 @@ You'll have to hard-code in some markdown to see how a blog looks.
    `blah` is the blog content
 
 [Example request in Postman](https://documenter.getpostman.com/view/24192581/2s93RNyEfq)
+
+### Before open sourcing this/making the repo public
+
+-   We should have some kind of auth or something so that not just anyone can
+    make pages on the site here (potentially make a cloned repo?)
+-   We should make the styling match our branding
+-   We should write about how it works
