@@ -5,6 +5,8 @@ import Card from "../../components/Card.astro";
 
 let markdown = Astro.request.headers.get("markdown");
 
+Astro.response.headers.set("Access-Control-Allow-Origin", "*");
+
 async function getDate() {
 	return new Date().toLocaleString();
 }
