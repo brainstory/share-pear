@@ -3,8 +3,10 @@ import netlify from "@astrojs/netlify/functions";
 
 export default defineConfig({
 	output: "server",
-	headers: {
-		"Access-Control-Allow-Origin": "*"
+	server: {
+		headers: {
+			"Access-Control-Allow-Origin": "*"
+		}
 	},
 	adapter: netlify({
 		builders: true
