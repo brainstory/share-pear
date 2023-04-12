@@ -2,3 +2,8 @@
   for = "/*"
   [headers.values]
 	Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/share/*"
+  [headers.values]
+	Cache-Control = "public, max-age=864000"
