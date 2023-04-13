@@ -9,17 +9,23 @@ export default async (request, context) => {
 	// 	);
 	// }
 
+	// return new Response("OK", {
+	// 	headers: {
+	// 		"Access-Control-Allow-Origin": "*",
+	// 		"Access-Control-Allow-Headers": "Content-Type, markdown",
+	// 		"X-Your-Custom-Header": "A custom value for testing"
+	// 	}
+	// });
+
+	response.headers.set("Access-Control-Allow-Origin", "*");
+	response.headers.set(
+		"Access-Control-Allow-Headers",
+		"Content-Type, markdown"
+	);
+	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
+	response.headers.set("X-Your-Custom-Header", "A custom value for testing");
+
 	console.log(response);
 
-	return new Response("OK", {
-		headers: {
-			"Access-Control-Allow-Origin": "*",
-			"Access-Control-Allow-Headers": "Content-Type, markdown",
-			"X-Your-Custom-Header": "A custom value for testing"
-		}
-	});
-
-	// response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
-
-	// return response;
+	return response;
 };
