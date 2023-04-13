@@ -6,4 +6,8 @@
 [[headers]]
   for = "/share/*"
   [headers.values]
-	Cache-Control = "public, max-age=864000"
+	Cache-Control = "public, max-age=2592000"
+
+[[edge_functions]]
+	path = "/*"
+	function = "headers"

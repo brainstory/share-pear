@@ -26,7 +26,7 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 
 		<p>
 			This is a <strong>public URL</strong> of this content, and will expire
-			within 10 days! If you want to keep this content, export it from the
+			within 30 days! If you want to keep this content, export it from the
 			Contenda app platform.
 		</p>
 
@@ -65,11 +65,12 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 		<p class="small">Blog generated at: {date}</p>
 
 		<!-- If we ever need to debug this, here's the headers passed from the API -->
-		<!-- <p>
+		<p>
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
+				{JSON.stringify(Object.fromEntries(Astro.response.headers))}
 			</code>
-		</p> -->
+		</p>
 	</main>
 </Layout>
