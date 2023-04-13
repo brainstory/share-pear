@@ -13,10 +13,12 @@ export default async (request, context) => {
 
 	return new Response("OK", {
 		headers: {
-			"Allow-Access-Control-Origin": "*",
+			"Access-Control-Allow-Origin": "*",
 			"X-Your-Custom-Header": "A custom value for testing"
 		}
 	});
+
+	// response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
 
 	// return response;
 };
