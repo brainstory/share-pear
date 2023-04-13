@@ -11,9 +11,10 @@ export default async (request, context) => {
 
 	response.headers.set("X-Your-Custom-Header", "A custom value");
 	response.headers.set("Access-Control-Allow-Origin", "*");
-	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
 	response.headers.set("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS");
-	response.status = 200;
+	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
+
+	console.log(response);
 
 	return response;
 };
