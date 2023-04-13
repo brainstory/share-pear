@@ -69,6 +69,10 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
+			</code>
+			<br />
+			And response headers:
+			<code>
 				{JSON.stringify(Object.fromEntries(Astro.response.headers))}
 			</code>
 		</p>
