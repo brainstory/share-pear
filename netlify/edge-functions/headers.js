@@ -9,12 +9,14 @@ export default async (request, context) => {
 	// 	);
 	// }
 
-	response.headers.set("X-Your-Custom-Header", "A custom value");
-	response.headers.set("Access-Control-Allow-Origin", "*");
-	response.headers.set("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS");
-	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
-
 	console.log(response);
 
-	return response;
+	return new Response("OK", {
+		headers: {
+			"Allow-Access-Control-Origin": "*",
+			"X-Your-Custom-Header": "A custom value for testing"
+		}
+	});
+
+	// return response;
 };
