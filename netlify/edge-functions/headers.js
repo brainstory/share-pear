@@ -14,6 +14,7 @@ export default async (request, context) => {
 	return new Response("OK", {
 		headers: {
 			"Access-Control-Allow-Origin": "*",
+			"Access-Control-Allow-Headers": "Content-Type, markdown",
 			"X-Your-Custom-Header": "A custom value for testing"
 		}
 	});
