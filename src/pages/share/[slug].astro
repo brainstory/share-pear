@@ -5,6 +5,8 @@ import Card from "../../components/Card.astro";
 
 let markdown = Astro.request.headers.get("markdown");
 
+markdown = decodeURIComponent(markdown);
+
 async function getDate() {
 	return new Date().toLocaleString();
 }
