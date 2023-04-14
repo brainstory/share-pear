@@ -17,7 +17,7 @@ if (markdown === undefined || markdown === null) {
 		"## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to build and share your content.";
 }
 
-let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
+let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 ---
 
 <Layout title="Contenda Blog Preview!">
@@ -67,7 +67,7 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 		<p class="small">Blog generated at: {date}</p>
 
 		<!-- If we ever need to debug this, here's the headers passed from the API -->
-		<p>
+		<!-- <p>
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
@@ -77,6 +77,6 @@ let renderContent = `# ${markdown.replace(/\\n/g, "\n")}`;
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.response.headers))}
 			</code>
-		</p>
+		</p> -->
 	</main>
 </Layout>
