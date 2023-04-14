@@ -12,7 +12,12 @@ async function getDate() {
 }
 const date = await getDate();
 
-if (markdown === undefined || markdown === null) {
+if (
+	markdown === undefined ||
+	markdown === null ||
+	markdown === "null" ||
+	markdown === ""
+) {
 	markdown =
 		"## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to build and share your content.";
 }
