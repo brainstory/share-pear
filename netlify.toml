@@ -8,9 +8,6 @@
   [headers.values]
 	Cache-Control = "public, max-age=2592000"
 
-[[redirects]]
-  from = "/share/*"
-  to = "https://deploy-preview-1--share-pear.netlify.app/share/*"
-  status = 200
-  force = true # COMMENT: ensure that we always redirect
-  headers = {Access-Control-Allow-Origin = "*"}
+[[edge_functions]]
+	path = "/*"
+	function = "headers"

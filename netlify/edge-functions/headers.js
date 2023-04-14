@@ -2,6 +2,16 @@ export default async (request, context) => {
 	const response = await context.next();
 	// const url = new URL(request.url);
 
+	if (request.method === "OPTIONS") {
+		return new Response("ok", {
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Headers": "Content-Type, markdown",
+				"X-Your-Custom-Header": "A custom value for testing"
+			}
+		});
+	}
+
 	// if (url.pathname.startsWith("/_astro")) {
 	// 	response.headers.set(
 	// 		"Cache-Control",
