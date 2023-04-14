@@ -11,14 +11,17 @@ export default async (request, context) => {
 		});
 	}
 
-	let url = new URL(request.url);
+	// TODO: only allow requests from our own domains
+	// let url = new URL(request.url);
 
-	let allowedUrlsRegex =
-		/^(https?:\/\/)?(localhost(:\d+)?|([a-zA-Z0-9-]+\.)?contenda\.co|(contenda(-test)?-platty-plat)\.netlify\.app)(\/.*)?$/;
+	// let allowedUrlsRegex =
+	// 	/^(https?:\/\/)?(localhost(:\d+)?|([a-zA-Z0-9-]+\.)?contenda\.co|(contenda(-test)?-platty-plat)\.netlify\.app)(\/.*)?$/;
 
-	if (url && allowedUrlsRegex.test(url)) {
-		response.headers.set("Access-Control-Allow-Origin", origin);
-	}
+	// if (url && allowedUrlsRegex.test(url)) {
+	// 	response.headers.set("Access-Control-Allow-Origin", origin);
+	// }
+
+	response.headers.set("Access-Control-Allow-Origin", "*");
 
 	response.headers.set(
 		"Access-Control-Allow-Headers",
