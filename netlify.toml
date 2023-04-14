@@ -1,13 +1,3 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-	Access-Control-Allow-Origin = "*"
-
-[[headers]]
-  for = "/share/*"
-  [headers.values]
-	Cache-Control = "public, max-age=2592000"
-
 [[edge_functions]]
 	path = "/*"
 	function = "headers"
