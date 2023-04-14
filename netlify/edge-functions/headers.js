@@ -11,7 +11,21 @@ export default async (request, context) => {
 		});
 	}
 
-	response.headers.set("Access-Control-Allow-Origin", "*");
+	let url = new URL(request.url);
+
+	if (
+		url &&
+		(url.startsWith("localhost") ||
+			url.endsWith(".contenda.co") ||
+			url.endsWith(".contenda.co/") ||
+			url.endsWith("contenda-test-platty-plat.netlify.app/") ||
+			url.endsWith("contenda-test-platty-plat.netlify.app") ||
+			url.endsWith("contenda-platty-plat.netlify.app/") ||
+			url.endsWith("contenda-platty-plat.netlify.app"))
+	) {
+		response.headers.set("Access-Control-Allow-Origin", origin);
+	}
+
 	response.headers.set(
 		"Access-Control-Allow-Headers",
 		"Content-Type, markdown"
