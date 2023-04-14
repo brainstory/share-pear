@@ -13,16 +13,10 @@ export default async (request, context) => {
 
 	let url = new URL(request.url);
 
-	if (
-		url &&
-		(url.startsWith("localhost") ||
-			url.endsWith(".contenda.co") ||
-			url.endsWith(".contenda.co/") ||
-			url.endsWith("contenda-test-platty-plat.netlify.app/") ||
-			url.endsWith("contenda-test-platty-plat.netlify.app") ||
-			url.endsWith("contenda-platty-plat.netlify.app/") ||
-			url.endsWith("contenda-platty-plat.netlify.app"))
-	) {
+	let allowedUrlsRegex =
+		/^(https?:\/\/)?(localhost(:\d+)?|([a-zA-Z0-9-]+\.)?contenda\.co|(contenda(-test)?-platty-plat)\.netlify\.app)(\/.*)?$/;
+
+	if (url && allowedUrlsRegex.test(url)) {
 		response.headers.set("Access-Control-Allow-Origin", origin);
 	}
 
