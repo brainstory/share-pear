@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@astrojs/netlify": "^2.2.2",
-		"astro": "^2.2.2",
+		"astro": "^2.3.0",
 		"astro-remote": "^0.2.3"
 	}
 }
