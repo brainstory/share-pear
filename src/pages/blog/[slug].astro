@@ -25,30 +25,25 @@ let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 ---
 
 <Layout title="Contenda Blog Preview!">
-	<main>
-		<h1 class="center">
-			<span class="text-gradient">Contenda</span> Blog Preview
-		</h1>
+	<p>
+		This is a <strong>public URL</strong> of this content, and will expire within
+		30 days! If you want to keep this content, export it from the Contenda app
+		platform.
+	</p>
 
-		<p>
-			This is a <strong>public URL</strong> of this content, and will expire
-			within 30 days! If you want to keep this content, export it from the
-			Contenda app platform.
-		</p>
+	<div class="blog">
+		<Markdown
+			content={renderContent}
+			sanitize={{
+				allowComments: true
+			}}
+		/>
+	</div>
 
-		<div class="blog">
-			<Markdown
-				content={renderContent}
-				sanitize={{
-					allowComments: true
-				}}
-			/>
-		</div>
+	<p class="small">Blog generated at: {date}</p>
 
-		<p class="small">Blog generated at: {date}</p>
-
-		<!-- If we ever need to debug this, here's the headers passed from the API -->
-		<!-- <p>
+	<!-- If we ever need to debug this, here's the headers passed from the API -->
+	<!-- <p>
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
@@ -59,5 +54,4 @@ let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 				{JSON.stringify(Object.fromEntries(Astro.response.headers))}
 			</code>
 		</p> -->
-	</main>
 </Layout>
