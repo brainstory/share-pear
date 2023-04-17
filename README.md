@@ -10,13 +10,13 @@
 
 1. Clone the repo
 2. Run `npm run dev`
-3. Navigate to `localhost:3000/share/whatever`
+3. Navigate to `localhost:3000/blog/whatever`
 
 You'll have to hard-code in some markdown to see how a blog looks.
 
 ### How to use the site in general
 
-1. Query `https://share-pear.netlify.app/share/[SOMETHING]` with a GET request
+1. Query `https://share.contenda.co/blog/[SOMETHING]` with a GET request
 2. The headers of the GET request have to include `markdown: "blah"` where
    `blah` is the blog content
 
