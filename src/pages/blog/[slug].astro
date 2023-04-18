@@ -17,20 +17,13 @@ if (
 	markdown === "null" ||
 	markdown === ""
 ) {
-	markdown =
-		"## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to build and share your content.";
+	markdown = `## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to create, edit, and share your content. We can't wait to see what you make!`;
 }
 
 let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 ---
 
 <Layout title="Contenda Blog Preview!">
-	<p>
-		This is a <strong>public URL</strong> of this content, and will expire within
-		30 days! If you want to keep this content, export it from the Contenda app
-		platform.
-	</p>
-
 	<div class="blog">
 		<Markdown
 			content={renderContent}
@@ -39,6 +32,17 @@ let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 			}}
 		/>
 	</div>
+
+	<div class="blog-end">
+		You've reached the end of the blog! Ready for more?
+		<a href="https://app.contenda.co">Create a new one here!</a>
+	</div>
+
+	<p class="small">
+		This is a <strong>public URL</strong> of this content, and will expire within
+		30 days! If you want to keep this content, export it from the Contenda app
+		platform.
+	</p>
 
 	<p class="small">Blog generated at: {date}</p>
 
