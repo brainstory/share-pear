@@ -1,6 +1,7 @@
 export default async (request, context) => {
 	const response = await context.next();
 
+	// Handle preflight requests
 	if (request.method === "OPTIONS") {
 		return new Response("ok", {
 			headers: {
@@ -10,7 +11,7 @@ export default async (request, context) => {
 		});
 	}
 
-	// TODO: only allow requests from our own domains
+	// Only allow requests from our own domains
 	let url = new URL(request.url);
 
 	let allowedUrlsRegex =
@@ -20,12 +21,13 @@ export default async (request, context) => {
 		response.headers.set("Access-Control-Allow-Origin", url);
 	}
 
-	// response.headers.set("Access-Control-Allow-Origin", "*");
-
+	// Accept markdown header
 	response.headers.set(
 		"Access-Control-Allow-Headers",
 		"Content-Type, markdown"
 	);
+
+	// Cache for 30 days
 	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
 
 	return response;
