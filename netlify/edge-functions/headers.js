@@ -21,6 +21,8 @@ export default async (request, context) => {
 		response.headers.set("Access-Control-Allow-Origin", url);
 	}
 
+	response.headers.set("Access-Control-Allow-Origin", response.url);
+
 	// Accept markdown header
 	response.headers.set(
 		"Access-Control-Allow-Headers",
