@@ -1,7 +1,6 @@
 ---
 import { Markdown } from "astro-remote";
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Card.astro";
 
 let markdown = Astro.request.headers.get("markdown");
 
@@ -18,61 +17,37 @@ if (
 	markdown === "null" ||
 	markdown === ""
 ) {
-	markdown =
-		"## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to build and share your content.";
+	markdown = `## No blog content found! \n Head back to [Contenda](https://app.contenda.co) to create, edit, and share your content. We can't wait to see what you make!`;
 }
 
 let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 ---
 
 <Layout title="Contenda Blog Preview!">
-	<main>
-		<h1 class="center">
-			<span class="text-gradient">Contenda</span> Blog Preview
-		</h1>
+	<div class="blog">
+		<Markdown
+			content={renderContent}
+			sanitize={{
+				allowComments: true
+			}}
+		/>
+	</div>
 
-		<p>
-			This is a <strong>public URL</strong> of this content, and will expire
-			within 30 days! If you want to keep this content, export it from the
-			Contenda app platform.
-		</p>
+	<div class="blog-end">
+		You've reached the end of the blog! Ready for more?
+		<a href="https://app.contenda.co">Create a new one here!</a>
+	</div>
 
-		<div class="blog">
-			<Markdown
-				content={renderContent}
-				sanitize={{
-					allowComments: true
-				}}
-			/>
-		</div>
+	<p class="small">
+		This is a <strong>public URL</strong> of this content, and will expire within
+		30 days! If you want to keep this content, export it from the Contenda app
+		platform.
+	</p>
 
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://app.contenda.co/"
-				title="Contenda Platform"
-				body="Create your own content on the Contenda platform."
-			/>
-			<Card
-				href="https://prod.contenda.io/docs"
-				title="Documentation"
-				body="Check out the docs for more information on how to use our API."
-			/>
-			<Card
-				href="https://contenda.co/blog"
-				title="Contenda Blog"
-				body="Head over to the Contenda blog for interesting articles and to learn more."
-			/>
-			<Card
-				href="https://twitter.com/contendaco"
-				title="Contenda Twitter"
-				body="Send the Contenda team a tweet about what you think!"
-			/>
-		</ul>
+	<p class="small">Blog generated at: {date}</p>
 
-		<p class="small">Blog generated at: {date}</p>
-
-		<!-- If we ever need to debug this, here's the headers passed from the API -->
-		<!-- <p>
+	<!-- If we ever need to debug this, here's the headers passed from the API -->
+	<!-- <p>
 			Received request headers:
 			<code>
 				{JSON.stringify(Object.fromEntries(Astro.request.headers))}
@@ -83,5 +58,4 @@ let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
 				{JSON.stringify(Object.fromEntries(Astro.response.headers))}
 			</code>
 		</p> -->
-	</main>
 </Layout>

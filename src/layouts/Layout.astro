@@ -32,79 +32,137 @@ const { title } = Astro.props;
 			property="twitter:image"
 			content=""
 		/> -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<slot />
+		<nav>
+			<a href="https://contenda.co"><img src="/logo.png" /></a>
+			<a href="https://app.contenda.co" class="link-button">
+				Give Contenda a Try!
+			</a>
+		</nav>
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent-gradient: linear-gradient(
-			45deg,
-			#4682b4,
-			#6ce385 30%,
-			white 60%
-		);
+		--dark-bg: #171d27;
+		--light-bg: #ffffff;
+		--blue: #4682b4;
+		--green: #6ce385;
+		--buttons: #4c5d88;
+		--accent-blue: #7796cb;
+		--yellow: #ffeed6;
 	}
+
+	* {
+		box-sizing: border-box;
+	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #f6f6f6;
+		font-family: "Inter", sans-serif;
+		background-color: var(--dark-bg);
+		margin: 0;
+		padding: 0;
+		height: 100%;
 	}
+
+	body {
+		background-color: var(--light-bg);
+		max-width: 56rem;
+		margin: 0 auto;
+		padding-top: 2.25rem;
+		min-height: 100%;
+	}
+
+	a {
+		color: var(--buttons);
+	}
+
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
 			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+		color: var(--accent-blue);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 0 5.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	nav img {
+		width: 156px;
+	}
+
+	nav a {
+		text-decoration: none;
+		cursor: pointer;
+		transition: background 0.2s ease-in-out;
+	}
+
+	.link-button {
+		padding: 0.75rem 1.5rem;
+		background: var(--buttons);
+		color: white;
+		border-radius: 4px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.link-button:hover {
+		background: #35415f;
 	}
 
 	main {
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		/* padding: 1.5rem; */
+		max-width: 37.5rem;
 	}
 	h1 {
-		font-size: 3rem;
-		font-weight: 800;
 		margin: 0;
-	}
-
-	p {
-		line-height: 1.6;
-	}
-
-	.center {
+		margin-bottom: 2.5rem;
+		font-size: 1.875rem;
+		font-weight: 500;
+		line-height: 2.5rem;
 		text-align: center;
 	}
 
-	.blog {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-			0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	p {
+		margin: 1.5rem 0;
 	}
-	.blog h1 {
-		font-size: 2rem;
+
+	.blog {
+		line-height: 1.25rem;
 	}
 
 	.blog img {
 		max-width: 100%;
 	}
 
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	.blog-end {
+		max-width: 33.75rem;
+		margin: 0 auto;
+		padding: 0.75rem 2rem;
+		background-color: var(--yellow);
+		border-radius: 4px;
+		font-size: 0.8rem;
+		text-align: center;
 	}
 
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+	.blog-end a {
+		color: black;
+		font-weight: 700;
 	}
 
 	.small {
