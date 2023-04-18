@@ -1,18 +1,8 @@
 export default async (request, context) => {
 	const response = await context.next();
 
-	// Handle preflight requests
-	if (request.method === "OPTIONS") {
-		return new Response("ok", {
-			headers: {
-				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Headers": "Content-Type, markdown"
-			}
-		});
-	}
-
 	// Only allow requests from our own domains
-	let url = new URL(request.url);
+	let url = request.headers.get("origin");
 
 	let allowedUrlsRegex =
 		/^(https?:\/\/)?(localhost(:\d+)?|([a-zA-Z0-9-]+\.)?contenda\.co|(contenda(-test)?-platty-plat)\.netlify\.app)(\/.*)?$/;
