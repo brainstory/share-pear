@@ -41,8 +41,10 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<nav>
-			<img src="/logo.png" />
-			<a href="https://app.contenda.co">Give Contenda a Try!</a>
+			<a href="https://contenda.co"><img src="/logo.png" /></a>
+			<a href="https://signup.contenda.co" class="link-button"
+				>Give Contenda a Try!</a
+			>
 		</nav>
 		<main>
 			<slot />
@@ -56,12 +58,19 @@ const { title } = Astro.props;
 		--blue: #4682b4;
 		--green: #6ce385;
 		--buttons: #4c5d88;
+		--accent-blue: #7796cb;
 	}
+
+	* {
+		box-sizing: border-box;
+	}
+
 	html {
 		font-family: "Inter", sans-serif;
 		background-color: var(--dark-bg);
 		margin: 0;
 		padding: 0;
+		height: 100%;
 	}
 
 	body {
@@ -69,10 +78,12 @@ const { title } = Astro.props;
 		max-width: 56rem;
 		margin: 0 auto;
 		padding-top: 2.25rem;
+		min-height: 100%;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
 			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+		color: var(--accent-blue);
 	}
 
 	nav {
@@ -81,6 +92,7 @@ const { title } = Astro.props;
 		align-items: center;
 		flex-wrap: wrap;
 		padding: 0 5.5rem;
+		margin-bottom: 2.5rem;
 	}
 
 	nav img {
@@ -88,30 +100,34 @@ const { title } = Astro.props;
 	}
 
 	nav a {
+		text-decoration: none;
+		cursor: pointer;
+		transition: background 0.2s ease-in-out;
+	}
+
+	.link-button {
 		padding: 0.75rem 1.5rem;
 		background: var(--buttons);
 		color: white;
 		border-radius: 4px;
 		font-weight: bold;
 		text-transform: uppercase;
-		text-decoration: none;
-		cursor: pointer;
-		transition: background 0.2s ease-in-out;
 	}
 
-	nav a:hover {
+	.link-button:hover {
 		background: #35415f;
 	}
 
 	main {
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		/* padding: 1.5rem; */
+		max-width: 37.5rem;
 	}
 	h1 {
-		font-size: 3rem;
-		font-weight: 800;
 		margin: 0;
+		font-size: 1.875rem;
+		font-weight: 500;
+		text-align: center;
 	}
 
 	p {
@@ -123,14 +139,7 @@ const { title } = Astro.props;
 	}
 
 	.blog {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-			0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		line-height: 1.25rem;
 	}
 	.blog h1 {
 		font-size: 2rem;
@@ -138,6 +147,10 @@ const { title } = Astro.props;
 
 	.blog img {
 		max-width: 100%;
+	}
+
+	.blog-end {
+		max-width: 33.75rem;
 	}
 
 	.small {
