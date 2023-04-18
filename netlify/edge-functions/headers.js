@@ -5,8 +5,7 @@ export default async (request, context) => {
 		return new Response("ok", {
 			headers: {
 				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Headers": "Content-Type, markdown",
-				"X-Your-Custom-Header": "A custom value for testing"
+				"Access-Control-Allow-Headers": "Content-Type, markdown"
 			}
 		});
 	}
@@ -28,7 +27,6 @@ export default async (request, context) => {
 		"Content-Type, markdown"
 	);
 	response.headers.set("Cache-Control", "public, max-age=2592000, immutable");
-	response.headers.set("X-Your-Custom-Header", "A custom value for testing");
 
 	return response;
 };
