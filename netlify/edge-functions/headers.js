@@ -18,7 +18,7 @@ export default async (request, context) => {
 		/^(https?:\/\/)?(localhost(:\d+)?|([a-zA-Z0-9-]+\.)?contenda\.co|(contenda(-test)?-platty-plat)\.netlify\.app)(\/.*)?$/;
 
 	if (url && allowedUrlsRegex.test(url)) {
-		response.headers.set("Access-Control-Allow-Origin", origin);
+		response.headers.set("Access-Control-Allow-Origin", url);
 	}
 
 	// response.headers.set("Access-Control-Allow-Origin", "*");
