@@ -16,7 +16,7 @@ content!
 2. Run `npm install && npm run dev`
 3. Navigate to `localhost:3000/blog/whatever`
 
-You'll have to hard-code in some markdown in the url, for example
+You'll have to hard-code in some URI-encoded markdown in the url, for example
 `localhost:3000/blog/whatever/{MARKDOWN}`, to see how a blog looks.
 
 ### 🪄 How to use the site in general
