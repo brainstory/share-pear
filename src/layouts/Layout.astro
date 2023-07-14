@@ -57,7 +57,7 @@ const { title } = Astro.props;
 		--light-bg: #ffffff;
 		--blue: #4682b4;
 		--green: #6ce385;
-		--buttons: #4c5d88;
+		--buttons: #2A9241;
 		--accent-blue: #7796cb;
 		--yellow: #ffeed6;
 	}
@@ -128,7 +128,7 @@ const { title } = Astro.props;
 	}
 
 	.link-button:hover {
-		background: #35415f;
+		background: rgba(42, 146, 65, 0.85);
 	}
 
 	main {
@@ -178,6 +178,13 @@ const { title } = Astro.props;
 	.small {
 		font-size: 0.8rem;
 		opacity: 0.5;
+	}
+
+	.blog-info {
+		color: #4C5D88;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
 	}
 
 	@media screen and (max-width: 600px) {

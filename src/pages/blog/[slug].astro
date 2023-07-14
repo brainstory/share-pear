@@ -10,6 +10,8 @@ async function getDate() {
 	return new Date().toLocaleString();
 }
 const date = await getDate();
+// Get month and day from date
+const [month, day] = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }).split(' ');
 
 if (
 	markdown === undefined ||
@@ -21,9 +23,24 @@ if (
 }
 
 let renderContent = `${markdown.replace(/\\n/g, "\n")}`;
+
+// Calculate reading time for markdown
+// Remove headings & inline Markdown formatting (bold, italic, etc.)
+const plainTextWithoutFormatting =  markdown.replace(/^#+\s+(.*)$/gm, '').replace(/(\*|_){1,2}(\S+)\1{1,2}|`{1,2}(\S+)`{1,2}/g, '$2$3');
+
+// Count the number of words in the plain text
+const wordCount = plainTextWithoutFormatting.trim().split(/\s+/).length;
+
+// Calculate the reading time in minutes (Assuming average reading speed of 200 words per minute)
+const readingTime = Math.ceil(wordCount / 200);
 ---
 
 <Layout title="Contenda Blog Preview!">
+	<div class="blog-info">
+		<span>{month} {day}</span>
+		<span>{readingTime} min read</span>
+	</div>
+	
 	<div class="blog">
 		<Markdown
 			content={renderContent}
