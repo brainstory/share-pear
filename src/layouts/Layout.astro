@@ -12,12 +12,12 @@ const { title } = Astro.props;
 
 		<!-- OG -->
 		<!-- TODO: Add OG images and final site URL -->
-		<meta property="og:title" content="Contenda Blog Preview" />
-		<meta property="og:site_name" content="Contenda Blog Preview" />
+		<meta property="og:title" content="Brainstory Idea Preview" />
+		<meta property="og:site_name" content="Brainstory Idea Preview" />
 		<!-- <meta property="og:url" content="" /> -->
 		<meta
 			property="og:description"
-			content="Preview your Contenda-generated blog posts before publishing them"
+			content="Check out a Brainstory idea before giving feedback."
 		/>
 		<meta property="og:type" content="website" />
 		<!-- <meta property="og:image" content="" /> -->
@@ -26,7 +26,7 @@ const { title } = Astro.props;
 		<meta property="twitter:title" content="Contenda Blog Preview" />
 		<meta
 			property="twitter:description"
-			content="Preview your Contenda-generated blog posts before publishing them"
+			content="Check out a Brainstory idea before giving feedback."
 		/>
 		<!-- <meta
 			property="twitter:image"
@@ -41,9 +41,9 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<nav>
-			<a href="https://contenda.co"><img src="/logo.png" /></a>
-			<a href="https://app.contenda.co" class="link-button">
-				Give Contenda a Try!
+			<a href="https://brainstory.ai"><img src="/logo.png" /></a>
+			<a href="https://app.brainstory.ai" class="link-button">
+				Give Brainstory a Try!
 			</a>
 		</nav>
 		<main>
@@ -53,11 +53,12 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--dark-bg: #171d27;
+		--dark-bg: #d6d3d1;
 		--light-bg: #ffffff;
 		--blue: #4682b4;
-		--green: #6ce385;
-		--buttons: #2A9241;
+		--green: #ec4899;
+		--buttons: #ec4899;
+		--buttonhover: #be185d;
 		--accent-blue: #7796cb;
 		--yellow: #ffeed6;
 	}
@@ -128,7 +129,7 @@ const { title } = Astro.props;
 	}
 
 	.link-button:hover {
-		background: rgba(42, 146, 65, 0.85);
+		background: var(--buttonhover);
 	}
 
 	main {
@@ -181,7 +182,7 @@ const { title } = Astro.props;
 	}
 
 	.blog-info {
-		color: #4C5D88;
+		color: #4c5d88;
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 2rem;
