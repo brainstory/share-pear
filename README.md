@@ -19,6 +19,16 @@ content!
 You'll have to hard-code in some URI-encoded markdown in the url, for example
 `localhost:3000/blog/whatever/{MARKDOWN}`, to see how a blog looks.
 
+#### Adapting it for yourself
+
+-   Update the logo in `public/`
+-   Update the colors and copy in `src/layouts/Layout.astro`
+-   Update the copy in `src/index.astro`, `src/404.astro`, and
+    `src/blog/[slug].astro`
+-   Update the `allowedUrlsRegex` in `netlify/edge-functions/headers.js` with
+    your web app's that will be calling this
+-   Party from dusk until dawn
+
 ### 🪄 How to use the site in general
 
 1. Query `https://share.contenda.co/blog/[SOMETHING]` with a GET request
