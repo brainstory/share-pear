@@ -21,6 +21,7 @@ You'll have to hard-code in some URI-encoded markdown in the url, for example
 
 #### Adapting it for yourself
 
+-   Click "Use this Template" at the top left of this repo on GitHub
 -   Update the logo in `public/`
 -   Update the colors and copy in `src/layouts/Layout.astro`
 -   Update the copy in `src/index.astro`, `src/404.astro`, and
